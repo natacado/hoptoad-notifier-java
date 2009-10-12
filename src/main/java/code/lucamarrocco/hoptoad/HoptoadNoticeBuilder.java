@@ -91,10 +91,14 @@ public class HoptoadNoticeBuilder {
 	}
 
 	private void errorMessage(final String errorMessage) {
-		if (notDefined(errorMessage)) {
-			error("The message that describes the error (ie. \"undefined method `password' for nil:NilClass\").");
+		if (notDefined(errorMessage)) 
+        {
+            this.errorMessage = "";
 		}
-		this.errorMessage = errorMessage;
+        else
+        {
+            this.errorMessage = errorMessage;
+        }
 	}
 
 	protected void filteredSystemProperties() {
