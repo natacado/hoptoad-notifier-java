@@ -118,7 +118,7 @@ public class HoptoadNoticeBuilder {
 
 	/** A hash of the session data that existed when the error occurred (required, but can be empty). */
 	protected void session(final Map session) {
-		this.session = session;
+		this.session.putAll(session);
 	}
 
 	protected void standardEnvironmentFilters() {
