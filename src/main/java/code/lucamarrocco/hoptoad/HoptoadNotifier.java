@@ -30,7 +30,7 @@ public class HoptoadNotifier implements HoptoadNotify {
 		try {
 			final HttpURLConnection toHoptoad = createConnection();
 			addingProperties(toHoptoad);
-			return send(new NoticeApi1(notice).toString(), toHoptoad);
+			return send(new NoticeApi2(notice).toString(), toHoptoad);
 		} catch (final Exception e) {
 			err(notice, e);
 		}
