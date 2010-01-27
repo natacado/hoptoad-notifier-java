@@ -4,7 +4,7 @@
   <groupId>code.lucamarrocco</groupId>
   <artifactId>hoptoad-notifier</artifactId>
   <packaging>jar</packaging>
-  <version>1.6-SNAPSHOT</version>
+  <version>1.7-SNAPSHOT</version>
   <name>Hoptoad Notifier</name>
   <dependencies>
     <dependency>
@@ -38,11 +38,6 @@
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
       <version>1.2.14</version>
-    </dependency>
-    <dependency>
-      <groupId>org.yaml</groupId>
-      <artifactId>snakeyaml</artifactId>
-      <version>1.4</version>
     </dependency>
   </dependencies>
   <distributionManagement>
