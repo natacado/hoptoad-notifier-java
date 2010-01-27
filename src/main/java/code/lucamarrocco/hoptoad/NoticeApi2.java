@@ -35,6 +35,12 @@ public class NoticeApi2 {
 				end("backtrace");
 			}
 			end("error");
+
+      server_environment();
+      {
+        tag("environment-name", notice.env());
+      }
+      end("server_environment");
 		}
 		end("notice");
 	}
@@ -62,6 +68,10 @@ public class NoticeApi2 {
 	private void error() {
 		tag("error");
 	}
+
+  private void server_environment() {
+    tag("server-environment");
+  }
 
 	private void line(String backtrace) {
 		append(new BacktraceLine(backtrace).toXml());

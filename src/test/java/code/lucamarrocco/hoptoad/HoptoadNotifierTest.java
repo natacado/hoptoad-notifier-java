@@ -96,7 +96,7 @@ public class HoptoadNotifierTest {
 		final Exception EXCEPTION = newException(ERROR_MESSAGE);
 		final HoptoadNotice notice = new HoptoadNoticeBuilder(API_KEY, EXCEPTION, "test").newNotice();
 
-		assertThat(notifierV2.notify(notice), is(201));
+		assertThat(notifierV2.notify(notice), is(200));
 	}
 
 	@Test
@@ -109,14 +109,14 @@ public class HoptoadNotifierTest {
 
 		}.newNotice();
 
-		assertThat(notifierV2.notify(notice), is(201));
+		assertThat(notifierV2.notify(notice), is(200));
 	}
 
 	@Test
 	public void testNotifyToHoptoadUsingBuilderNoticeInEnv() {
 		final HoptoadNotice notice = new HoptoadNoticeBuilder(API_KEY, ERROR_MESSAGE, "test").newNotice();
 
-		assertThat(notifierV2.notify(notice), is(201));
+		assertThat(notifierV2.notify(notice), is(200));
 	}
 
 	@Test
@@ -124,7 +124,7 @@ public class HoptoadNotifierTest {
 		final Exception EXCEPTION = newException(ERROR_MESSAGE);
 		final HoptoadNotice notice = new HoptoadNoticeBuilder(API_KEY, new QuietRubyBacktrace(), EXCEPTION, "test").newNotice();
 
-		assertThat(notifierV2.notify(notice), is(201));
+		assertThat(notifierV2.notify(notice), is(200));
 	}
 
 	@Test
@@ -132,7 +132,7 @@ public class HoptoadNotifierTest {
 		final Exception EXCEPTION = newException(ERROR_MESSAGE);
 		final HoptoadNotice notice = new HoptoadNoticeBuilder(API_KEY, EXCEPTION).newNotice();
 
-		assertThat(notifierV2.notify(notice), is(201));
+		assertThat(notifierV2.notify(notice), is(200));
 	}
 
 	@Test
@@ -140,7 +140,7 @@ public class HoptoadNotifierTest {
 		final Exception EXCEPTION = newException(ERROR_MESSAGE);
 		final HoptoadNotice notice = new HoptoadNoticeBuilder(API_KEY, new RubyBacktrace(), EXCEPTION, "test").newNotice();
 
-		assertThat(notifierV2.notify(notice), is(201));
+		assertThat(notifierV2.notify(notice), is(200));
 	}
 
 	@Test
@@ -148,14 +148,14 @@ public class HoptoadNotifierTest {
 		final Exception EXCEPTION = newException(ERROR_MESSAGE);
 		final HoptoadNotice notice = new HoptoadNoticeBuilderUsingFilterdSystemProperties(API_KEY, new RubyBacktrace(), EXCEPTION, "test").newNotice();
 
-		assertThat(notifierV2.notify(notice), is(201));
+		assertThat(notifierV2.notify(notice), is(200));
 	}
 
 	@Test
 	public void testSendNoticeToHoptoad() {
 		final HoptoadNotice notice = new HoptoadNoticeBuilder(API_KEY, ERROR_MESSAGE).newNotice();
 
-		assertThat(notifierV2.notify(notice), is(201));
+		assertThat(notifierV2.notify(notice), is(200));
 	}
 
 	@Test
@@ -166,7 +166,7 @@ public class HoptoadNotifierTest {
 			}
 		}.newNotice();
 
-		assertThat(notifierV2.notify(notice), is(201));
+		assertThat(notifierV2.notify(notice), is(200));
 	}
 
 	@Test
@@ -177,6 +177,6 @@ public class HoptoadNotifierTest {
 			}
 		}.newNotice();
 
-		assertThat(notifierV2.notify(notice), is(201));
+		assertThat(notifierV2.notify(notice), is(200));
 	}
 }
