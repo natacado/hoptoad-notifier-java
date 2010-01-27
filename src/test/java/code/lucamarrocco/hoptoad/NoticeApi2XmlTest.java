@@ -74,7 +74,7 @@ public class NoticeApi2XmlTest {
 
 	@Test
 	public void testNotifierVersion() {
-		assertThat(xml(new NoticeApi2(notice)), containsString("<version>1.7</version>"));
+		assertThat(xml(new NoticeApi2(notice)), containsString("<version>1.7-socrata-SNAPSHOT</version>"));
 	}
 
 	private String xml(NoticeApi2 noticeApi) {

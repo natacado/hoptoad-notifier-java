@@ -16,7 +16,7 @@ public class NoticeApi2 {
 			notifier();
 			{
 				name("hoptoad");
-				version("1.7");
+				version("1.7-socrata-SNAPSHOT");
 				url("http://hoptoad.googlecode.com");
 			}
 			end("notifier");
