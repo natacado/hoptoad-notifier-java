@@ -5,6 +5,7 @@
 package code.lucamarrocco.hoptoad;
 
 import static org.hamcrest.Matchers.*;
+
 import static org.junit.Assert.*;
 
 import org.junit.*;
@@ -49,7 +50,7 @@ public class NoticeApi2XmlTest {
 
 	@Test
 	public void testErrorMessage() {
-		assertThat(xml(new NoticeApi2(notice)), containsString("<message>errorMessage</message>"));
+		assertThat(xml(new NoticeApi2(notice)), containsString("<message>java.lang.RuntimeException: errorMessage</message>"));
 	}
 
 	@Test

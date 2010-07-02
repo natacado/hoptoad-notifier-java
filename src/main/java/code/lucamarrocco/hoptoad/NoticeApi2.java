@@ -24,7 +24,7 @@ public class NoticeApi2 {
 			error();
 			{
 				tag("class", notice.errorClass());
-				tag("message", notice.errorMessage());
+				tag("message", notice.errorClass() + ": " + notice.errorMessage());
 
 				backtrace();
 				{
