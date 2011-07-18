@@ -17,7 +17,7 @@ public class HoptoadNotifier {
 	}
 
 	private HttpURLConnection createConnection() throws IOException, MalformedURLException {
-		final HttpURLConnection connection = (HttpURLConnection) new URL("http://hoptoadapp.com/notices/").openConnection();
+		final HttpURLConnection connection = (HttpURLConnection) new URL("http://airbrakeapp.com/notices/").openConnection();
 		return connection;
 	}
 
