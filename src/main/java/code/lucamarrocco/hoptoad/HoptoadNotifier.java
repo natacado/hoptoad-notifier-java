@@ -7,17 +7,17 @@ package code.lucamarrocco.hoptoad;
 import java.io.*;
 import java.net.*;
 
-public class HoptoadNotifier {
+public class HoptoadNotifier implements HoptoadNotify {
 
 	private void addingProperties(final HttpURLConnection connection) throws ProtocolException {
 		connection.setDoOutput(true);
-		connection.setRequestProperty("Content-type", "application/x-yaml");
+		connection.setRequestProperty("Content-type", "text/xml");
 		connection.setRequestProperty("Accept", "text/xml, application/xml");
 		connection.setRequestMethod("POST");
 	}
 
 	private HttpURLConnection createConnection() throws IOException, MalformedURLException {
-		final HttpURLConnection connection = (HttpURLConnection) new URL("http://airbrakeapp.com/notices/").openConnection();
+		final HttpURLConnection connection = (HttpURLConnection) new URL("http://airbrakeapp.com/notifier_api/v2/notices").openConnection();
 		return connection;
 	}
 
@@ -30,7 +30,7 @@ public class HoptoadNotifier {
 		try {
 			final HttpURLConnection toHoptoad = createConnection();
 			addingProperties(toHoptoad);
-			return send(new Yaml(notice).toString(), toHoptoad);
+			return send(new NoticeApi2(notice).toString(), toHoptoad);
 		} catch (final Exception e) {
 			err(notice, e);
 		}
